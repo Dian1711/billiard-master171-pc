@@ -1,0 +1,26 @@
+{
+  "name": "billiard-master",
+  "productName": "Billiard Master",
+  "version": "1.0.0",
+  "description": "Billiard Master by Tank171 App",
+  "author": "Tank171 App",
+  "main": "main.js",
+  "scripts": { "dist": "electron-builder --win nsis portable --x64 --publish never" },
+  "devDependencies": { "electron": "^31.7.7", "electron-builder": "^24.13.3" },
+  "build": {
+    "appId": "com.tank171.billiardmaster",
+    "productName": "Billiard Master",
+    "files": ["main.js", "www/**/*"],
+    "directories": { "buildResources": "build", "output": "dist" },
+    "win": { "icon": "build/icon.png" },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Billiard Master",
+      "artifactName": "BilliardMaster-Setup-${version}.exe"
+    },
+    "portable": { "artifactName": "BilliardMaster-Portable-${version}.exe" }
+  }
+}
